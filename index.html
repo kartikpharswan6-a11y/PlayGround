@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#100f13">
+  <title>Gloam — The Quiet Below</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✳</span><div><strong>GLOAM</strong><small>THE QUIET BELOW</small></div></div>
+      <div class="run-meta"><span class="depth-label">DESCENT</span><b id="floorText">01 <i>/ 05</i></b></div>
+      <button class="sound-button" id="soundBtn" aria-label="Toggle sound">♫ <span>SOUND</span></button>
+    </header>
+    <section class="game-layout">
+      <aside class="side-panel left-panel">
+        <div class="panel-kicker">YOUR VIGIL</div>
+        <div class="hero-card"><div class="portrait">✦</div><div><b>THE WANDERER</b><small>NO NAME. NO DAWN.</small></div></div>
+        <div class="stat-line"><span>VITALITY</span><strong id="hpText">100 <i>/ 100</i></strong></div>
+        <div class="meter hp-meter"><span id="hpBar"></span></div>
+        <div class="stat-line mana-line"><span>EMBER</span><strong id="emberText">3 <i>/ 3</i></strong></div>
+        <div class="meter ember-meter"><span id="emberBar"></span></div>
+        <div class="divider"></div>
+        <div class="panel-kicker">WHAT IT LEARNS</div>
+        <p class="lore">The things below remember. Every habit is a lesson you teach them.</p>
+        <div class="readout"><span class="readout-icon">⌁</span><div><b id="habitName">UNREADABLE</b><small id="habitText">Keep moving. Watch what watches you.</small></div></div>
+        <div class="adapt-track"><span id="adaptBar"></span></div>
+        <div class="adapt-label"><span>ITS MEMORY</span><span id="adaptText">0%</span></div>
+      </aside>
+      <section class="arena-wrap">
+        <div class="arena-head"><span><i class="live-dot"></i> LIVE DESCENT</span><span id="roomLabel">THE MOUTHING HALL</span></div>
+        <div class="arena" id="arena">
+          <canvas id="game" aria-label="Dungeon game area"></canvas>
+          <div class="toast" id="toast"></div>
+          <div class="start-screen" id="startScreen">
+            <div class="sigil">✳</div><div class="eyebrow">A TALE FROM UNDERGROUND</div>
+            <h1>THE QUIET<br><em>BELOW</em></h1>
+            <p>It has been listening to your footsteps.<br>Now it knows how you fight.</p>
+            <button class="primary-button" id="beginBtn">DESCEND <span>→</span></button>
+            <div class="start-hint">WASD / ARROWS TO MOVE · SPACE TO STRIKE</div>
+          </div>
+          <div class="end-screen hidden" id="endScreen"><div class="sigil">✳</div><div class="eyebrow" id="endEyebrow">THE DEEP REMEMBERS</div><h2 id="endTitle">THE QUIET<br><em>CLAIMS YOU</em></h2><p id="endCopy">The dark has learned your last lesson.</p><button class="primary-button" id="againBtn">BEGIN AGAIN <span>↻</span></button></div>
+          <div class="combat-caption" id="combatCaption">A wet sound stirs in the dark...</div>
+        </div>
+        <div class="arena-foot"><span>✦ <b id="objective">SURVIVE THE HALL</b></span><span id="killText">0 / 1 FOES</span></div>
+      </section>
+      <aside class="side-panel right-panel">
+        <div class="panel-kicker">FIELD NOTES <span class="note-count">✧</span></div>
+        <div class="enemy-card"><div class="enemy-glyph" id="enemyGlyph">◉</div><div><b id="enemyName">THE HOLLOWLING</b><small id="enemyType">UNCLASSIFIED · 01</small></div></div>
+        <p class="enemy-desc" id="enemyDesc">A thing stitched from old hunger. It watches how you move.</p>
+        <div class="divider"></div>
+        <div class="panel-kicker">RECENT OMENS</div>
+        <div class="omens" id="omens"><p class="omen"><span>✦</span> You have entered the mouthing hall.</p></div>
+        <div class="journal"><div class="journal-seal">✧</div><p>“Do not repeat a victory. The dark is taking notes.”</p><small>— SCRAWLED ON THE WALL</small></div>
+      </aside>
+    </section>
+    <footer class="controls">
+      <div class="move-control"><span class="control-label">MOVE</span><div class="dpad"><button data-key="up" aria-label="Move up">▲</button><button data-key="left" aria-label="Move left">◀</button><button class="dpad-center" tabindex="-1">✦</button><button data-key="right" aria-label="Move right">▶</button><button data-key="down" aria-label="Move down">▼</button></div></div>
+      <div class="control-tip"><b>THEY LEARN.</b> Change your rhythm. Don’t let them predict you.</div>
+      <div class="action-control"><span class="control-label">ACTIONS</span><div class="action-buttons"><button class="action strike" data-action="attack"><span>⚔</span><small>STRIKE</small><kbd>SPACE</kbd></button><button class="action dodge" data-action="dodge"><span>↗</span><small>DODGE</small><kbd>SHIFT</kbd></button><button class="action heal" data-action="heal"><span>✚</span><small>EMBER</small><kbd>Q</kbd></button></div></div>
+    </footer>
+    <div class="mobile-note">Touch controls ready · rotate for a wider view</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>

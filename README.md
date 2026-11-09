@@ -16,3 +16,18 @@
 - 👤 [Explore the creator's projects](https://go.ondev.store/kartikpharswan6-a11y).
 - 🌍 [Create with OMGithub](https://go.ondev.store/).
 <!-- omgithub:readme:end -->
+
+## The Quiet Below
+
+A mobile-friendly, top-down dungeon RPG. Descend through five halls, fight the grotesque things waiting there, and vary your tactics: foes track repeated strikes, dodges, healing, and movement patterns.
+
+### Play
+
+Open `index.html` in a browser, or serve this folder locally (for example, `python3 -m http.server 3000`) and visit `http://localhost:3000`.
+
+- **Move:** WASD / arrow keys, or the on-screen directional pad
+- **Strike:** Space, or **Strike**
+- **Dodge:** Shift, or **Dodge**
+- **Heal:** Q, or **Ember**
+
+Touch controls are included for phones and tablets. Sound is optional and off by default.
